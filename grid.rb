@@ -7,8 +7,10 @@ class Grid
 
   def initialize
     @empty_cells = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    @user1 = User.new('Lorenzo', 'x')
-    @user2 = User.new('Leonardo', 'o')
+    print 'First player: '
+    @user1 = User.new('x')
+    print 'Second player: '
+    @user2 = User.new('o')
   end
 
   def print_grid
@@ -42,38 +44,23 @@ class Grid
     choice = user.choose_cell(empty_cells)
     empty_cells.delete(choice)
     grid.print_grid
-    check_if_win?(user.name, user.choices)
-    check_full_grid?
+    check_if_win(user)
   end
 
-  def check_if_win?(name, choices)
+  def check_if_win(user)
     Grid.winning_combinations.each do |combination|
-      if (combination & choices) == combination
-        puts "#{name} won!"
+      if (combination & user.choices) == combination
+        puts "#{user.name} won!"
         exit
       end
     end
-    print 'Next user\'s turn: '
-    false
+    if check_full_grid?
+      puts 'It\'s a tie!'
+      exit
+    end
   end
 
   def check_full_grid?
-     if empty_cells.length.zero? 
-       puts 'It\'s a tie!'
-       exit
-     end
+     empty_cells.length.zero? 
   end
 end
-
-#grid = Grid.new
-#grid.play_round(grid.user1, grid)
-#grid.play_round(grid.user2, grid)
-#grid.play_round(grid.user1, grid)
-#grid.play_round(grid.user2, grid)
-#grid.play_round(grid.user1, grid)
-#grid.play_round(grid.user2, grid)
-#grid.play_round(grid.user1, grid)
-#grid.play_round(grid.user2, grid)
-#grid.play_round(grid.user1, grid)
-#grid.play_round(grid.user2, grid)
-#

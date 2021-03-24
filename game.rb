@@ -1,14 +1,15 @@
-require_relative 'grid.rb'
+# frozen_string_literal: true
+
+require_relative 'grid'
 
 class Game
   attr_accessor :grid
 
-  def initialize
-  end
+  def initialize; end
 
   def self.play_game
-    @grid = Grid.new()
-    while true do
+    @grid = Grid.new
+    loop do
       @grid.play_round(@grid.user1, @grid)
       @grid.play_round(@grid.user2, @grid)
     end
