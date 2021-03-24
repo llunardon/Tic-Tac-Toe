@@ -65,15 +65,15 @@ class Grid
   end
 end
 
-grid = Grid.new
-grid.play_round(grid.user1, grid)
-grid.play_round(grid.user2, grid)
-grid.play_round(grid.user1, grid)
-grid.play_round(grid.user2, grid)
-grid.play_round(grid.user1, grid)
-grid.play_round(grid.user2, grid)
-grid.play_round(grid.user1, grid)
-grid.play_round(grid.user2, grid)
-grid.play_round(grid.user1, grid)
-grid.play_round(grid.user2, grid)
-
+#grid = Grid.new
+#grid.play_round(grid.user1, grid)
+#grid.play_round(grid.user2, grid)
+#grid.play_round(grid.user1, grid)
+#grid.play_round(grid.user2, grid)
+#grid.play_round(grid.user1, grid)
+#grid.play_round(grid.user2, grid)
+#grid.play_round(grid.user1, grid)
+#grid.play_round(grid.user2, grid)
+#grid.play_round(grid.user1, grid)
+#grid.play_round(grid.user2, grid)
+#
